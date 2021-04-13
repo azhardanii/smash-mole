@@ -1,0 +1,194 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Frijole', cursive; 
+    cursor: url(img/hammer.png), auto; 
+}
+
+*:active {
+    cursor: url(img/hammer_click.png), auto;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(to right top, #ff8d0a, #ffca7b);
+    display: flex;  
+}
+
+
+header {
+    align-items: center;
+    flex-direction: column;
+}
+
+h1 {    
+    text-align: center;    
+    font-size: 6rem;
+    font-weight: 100;
+    padding: 4rem 0 1rem 0;  
+    text-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+}
+
+.setting {
+    display: flex;
+    width: 13%;
+    margin-right: 10%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.countDown {
+    margin-top: 4rem;
+    text-align: center;
+}
+
+.score, .top-score {    
+    margin: 2rem 0; 
+    padding: 1rem 1rem 0 1rem;
+    text-align: center;    
+    width: 100%;
+    height: 18%;
+    border-radius: 3rem;
+}
+
+.score h2, .top-score h2, .countDown h2 {
+    font-size: 5rem;
+}
+
+.score {
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+.top-score {
+    background-color: rgba(255, 93, 93, 0.74);
+}
+
+.go {
+    display: block;
+    margin: auto;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 3px solid rgba(0, 0, 0, 0.4);
+    padding: 5px 15px;
+    border-radius: 100px;
+    position: relative;  
+    outline: none;
+    font-size: 2rem;
+    font-weight: 100;     
+    background-color: rgb(8, 160, 16);
+    color: rgb(255, 255, 255);   
+    animation: moveInBottom 1s ease-out;
+    animation-fill-mode: backwards;
+    transition: all .1s;  
+}
+
+.go:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 1px 7px rgba(0, 0, 0, 0.3);
+}
+
+.go:active {
+    transform: translateY(-1px);
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+    border: 2.99px solid rgba(0, 0, 0, 0.5);
+}
+
+.go::after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all .4s;
+    background-color: rgb(8, 160, 16);
+}
+
+.go:hover::after {
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0;
+}
+
+@keyframes moveInBottom {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+.container {
+    width: 70%;
+    margin: auto;    
+    position: relative;
+    display: flex;    
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.ground {
+    width: 10rem;
+    height: 9rem;
+    overflow: hidden;
+    position: relative;  
+    margin: 4.3rem;  
+}
+
+@media (max-width: 576px) {
+    .container {
+        width: 90%;
+    }
+    .ground {
+        margin: 2rem;  
+    }
+}
+
+.ground::after {
+    content: '';
+    display: block;
+    width: 10rem;
+    height: 5rem;
+    background: url(./img/ground.png) bottom center no-repeat;
+    background-size: 120%;
+    position: absolute;
+    bottom: -1.5rem;
+}
+
+.mole {
+    width: 100%;
+    height: 100%;
+    background: url(./img/mole1.png) bottom center no-repeat;
+    background-size: 75%;
+    position: absolute;
+    top: 6rem;
+    transition: top 0.3s;
+}
+
+.ground.moleup .mole {
+    top: -1.3rem;
+}
+
+.myfoot {
+    text-align: center;
+    font-size: 13px;    
+}
+
+.myfoot a {
+    text-decoration: none;
+    color: black;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.myfoot a:hover {
+    color: rgba(0, 0, 0, 0.8);
+}
