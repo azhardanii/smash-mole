@@ -3,6 +3,7 @@
     margin: 0;
     box-sizing: border-box;
     font-family: 'Frijole', cursive; 
+    user-select: none;
     cursor: url(img/hammer.png), auto; 
 }
 
@@ -12,10 +13,8 @@
 
 body {
     min-height: 100vh;
-    background: linear-gradient(to right top, #ff8d0a, #ffca7b);
     display: flex;  
 }
-
 
 header {
     align-items: center;
@@ -49,7 +48,7 @@ h1 {
     padding: 1rem 1rem 0 1rem;
     text-align: center;    
     width: 100%;
-    height: 18%;
+    height: 9.6rem;
     border-radius: 3rem;
 }
 
@@ -179,7 +178,8 @@ h1 {
 
 .myfoot {
     text-align: center;
-    font-size: 13px;    
+    font-size: 13px;   
+    padding: 2rem 0; 
 }
 
 .myfoot a {
@@ -191,4 +191,37 @@ h1 {
 
 .myfoot a:hover {
     color: rgba(0, 0, 0, 0.8);
+}
+
+.btncolor button {
+    font-size: 1rem;
+    margin: 2rem 0;
+    border: none;
+    border-radius: 2rem;
+    padding: .5rem;
+    background: linear-gradient(to left bottom, rgba(255, 255, 255, 0.432), #ffffff);
+    transition: all .1s;  
+}
+
+.btncolor button:focus {
+    outline: none;
+}
+
+.btncolor button:active {
+    transform: translateY(1px);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    border: 2px solid rgba(0, 0, 0, 0.5);
+}
+
+.bgOrange { 
+    background: linear-gradient(to right top, #ff8d0a, #ffca7b);     
+}
+.bgBlack { 
+    background: linear-gradient(to right top, #333333, #cacaca);     
+}
+.bgGreen { 
+    background: linear-gradient(to right top, #1fff3d, #b5ffbf); 
+}
+.bgBlue { 
+    background: linear-gradient(to right top, #1f80ff, #c3e7ff); 
 }

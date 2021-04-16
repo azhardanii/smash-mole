@@ -73,3 +73,28 @@ function hit() {
 mole.forEach(m => {
     m.addEventListener('click', hit);
 });
+
+function selected() {
+    return document.getElementsByClassName('select');
+}
+
+function cColor() {
+    let all = selected();
+
+    for (let i = 0; i < 1; i++) {
+        let color = all[i].classList;
+        if (color.contains('bgOrange')) {
+            all[i].classList.add('bgBlack');
+            all[i].classList.remove('bgOrange');
+        } else if (color.contains('bgBlack')) {
+            all[i].classList.add('bgGreen');
+            all[i].classList.remove('bgBlack');
+        } else if (color.contains('bgGreen')) {
+            all[i].classList.add('bgBlue');
+            all[i].classList.remove('bgGreen');
+        } else if (color.contains('bgBlue')) {
+            all[i].classList.add('bgOrange');
+            all[i].classList.remove('bgBlue');
+        }
+    }
+}
