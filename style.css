@@ -225,3 +225,47 @@ h1 {
 .bgBlue { 
     background: linear-gradient(to right top, #1f80ff, #c3e7ff); 
 }
+
+#overlay {
+    display: none;
+}
+
+@media (max-width: 1128px) {
+    body {
+        overflow-y: hidden;
+    }
+
+    header, .setting { 
+        -webkit-filter: blur(15px);
+        -moz-filter: blur(15px);
+        -o-filter: blur(15px);
+        -ms-filter: blur(15px);
+        filter: blur(15px);
+        z-index: 1;
+    }
+
+    #overlay {
+        display: block;
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(255,255,255,0.7);
+        z-index: 2;
+        cursor: pointer;
+    }
+    
+    #text {
+        text-align: center;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        font-size: 50px;
+        color: black;
+        transform: translate(-50%,-50%);
+        -ms-transform: translate(-50%,-50%);
+    }
+}
