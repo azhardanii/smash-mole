@@ -139,7 +139,7 @@ h1 {
     height: 9rem;
     overflow: hidden;
     position: relative;  
-    margin: 4rem;  
+    margin: 3.3rem;  
 }
 
 @media (max-width: 576px) {
